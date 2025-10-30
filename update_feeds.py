@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # 👈 this gives GitHub Actions permission to push changes
+  contents: write   # 👈 allows commit/push from Actions
 
 jobs:
   fetch:
@@ -29,15 +29,13 @@ jobs:
 
       - name: Generate latest.json
         run: |
-          python - <<'EOF'
-          import json, feedparser, datetime
-
+          echo "import json, feedparser, datetime
           feeds = {
-              "detik.com": "https://news.detik.com/berita/rss",
-              "antaranews.com": "https://www.antaranews.com/rss/top-news",
-              "kompas.com": "https://rss.kompas.com/api/feed/social?apikey=bc58c81819dff4b8d5c53540a2fc7ffd83e6314a",
-              "tempo.co": "http://rss.tempo.co/nasional",
-              "cnnindonesia.com": "https://www.cnnindonesia.com/nasional/rss",
+              'detik.com': 'https://news.detik.com/berita/rss',
+              'antaranews.com': 'https://www.antaranews.com/rss/top-news',
+              'kompas.com': 'https://rss.kompas.com/api/feed/social?apikey=bc58c81819dff4b8d5c53540a2fc7ffd83e6314a',
+              'tempo.co': 'http://rss.tempo.co/nasional',
+              'cnnindonesia.com': 'https://www.cnnindonesia.com/nasional/rss',
           }
 
           results = []
@@ -46,18 +44,20 @@ jobs:
                   d = feedparser.parse(url)
                   if d.entries:
                       title = d.entries[0].title
-                      results.append({"source": source, "title": title})
+                      results.append({'source': source, 'title': title})
               except Exception as e:
-                  print("Failed to fetch", source, e)
+                  print('Failed to fetch', source, e)
 
           data = {
-              "updated": datetime.datetime.utcnow().isoformat() + "Z",
-              "feeds": results
+              'updated': datetime.datetime.utcnow().isoformat() + 'Z',
+              'feeds': results
           }
 
-          with open("latest.json", "w", encoding="utf-8") as f:
+          with open('latest.json', 'w', encoding='utf-8') as f:
               json.dump(data, f, ensure_ascii=False, indent=2)
-          EOF
+          " > update_feeds.py
+
+          python update_feeds.py
 
       - name: Commit and push changes
         env:
