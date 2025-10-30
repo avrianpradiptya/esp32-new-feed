@@ -2,36 +2,29 @@ name: Update RSS Feeds
 
 on:
   schedule:
-    - cron: "0 * * * *"  # every hour
-  workflow_dispatch:      # allow manual trigger
+    - cron: "0 * * * *"   # every hour
+  workflow_dispatch:       # allow manual run
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.x"
-
-    - name: Install feedparser
-      run: pip install feedparser
-
-    - name: Run script
-      run: python update_feeds.py
-
-    - name: Commit changes
-      run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
-        git add latest.json
-        git commit -m "Update news feed" || echo "No changes to commit"
-        git push
-
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: pip install feedparser requests
+      - name: Run update script
+        run: python update_rss.py
+      - name: Commit and push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add latest.json
+          git commit -m "Update RSS feed" || echo "No changes to commit"
+          git push
