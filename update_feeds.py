@@ -1,30 +1,28 @@
-name: Update RSS Feeds
+import feedparser, json, datetime
 
-on:
-  schedule:
-    - cron: "0 * * * *"   # every hour
-  workflow_dispatch:       # allow manual run
+# List of RSS feeds
+feeds = {
+    "detik.com": "https://news.detik.com/berita/rss",
+    "antaranews.com": "https://www.antaranews.com/rss/top-news",
+    "kompas.com": "https://rss.kompas.com/api/feed/social?apikey=bc58c81819dff4b8d5c53540a2fc7ffd83e6314a",
+    "tempo.co": "http://rss.tempo.co/nasional",
+    "cnnindonesia.com": "https://www.cnnindonesia.com/nasional/rss"
+}
 
-permissions:
-  contents: write
+results = []
+for name, url in feeds.items():
+    d = feedparser.parse(url)
+    if d.entries:
+        latest = d.entries[0]
+        title = latest.title.replace("\n", " ").strip()
+        results.append({"source": name, "title": title})
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-      - name: Install dependencies
-        run: pip install feedparser requests
-      - name: Run update script
-        run: python update_rss.py
-      - name: Commit and push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add latest.json
-          git commit -m "Update RSS feed" || echo "No changes to commit"
-          git push
+data = {
+    "updated": datetime.datetime.utcnow().isoformat() + "Z",
+    "feeds": results
+}
+
+with open("latest.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("✅ latest.json updated successfully!")
