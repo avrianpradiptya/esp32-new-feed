@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>ESP32 News Feed</title></head>
+<body>
+  <h2>ESP32 News Feed</h2>
+  <pre id="data"></pre>
+  <script>
+    fetch('latest.json').then(r=>r.json()).then(j=>{
+      document.getElementById('data').textContent = JSON.stringify(j, null, 2);
+    });
+  </script>
+</body>
+</html>
