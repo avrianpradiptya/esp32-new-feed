@@ -1,5 +1,5 @@
 {
-  "updated": "2025-11-05T18:17:36.717389Z",
+  "updated": "2025-11-05T19:09:51.773017Z",
   "feeds": [
     {
       "source": "detik.com",
@@ -12,6 +12,10 @@
     {
       "source": "kompas.com",
       "title": "Link Live Streaming Man City Vs Dortmund di Liga Champions"
+    },
+    {
+      "source": "tempo.co",
+      "title": "Pertamina Siap Dukung Kelanjutan Mandalika Racing Series 2026"
     }
   ]
 }
