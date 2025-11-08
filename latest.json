@@ -1,17 +1,21 @@
 {
-  "updated": "2025-11-08T10:10:27.467130Z",
+  "updated": "2025-11-08T11:08:46.412844Z",
   "feeds": [
     {
+      "source": "detik.com",
+      "title": "Hima Persis Apresiasi Penetapan Tersangka Roy Suryo CS : Bentuk Penegakan Kepastian Hukum"
+    },
+    {
       "source": "antaranews.com",
-      "title": "Gempa bumi dangkal, magnitudo 4,4 terjadi di Tarakan Kaltara"
+      "title": "Survei: Prabowo masih terpilih jika pilpres digelar sekarang"
     },
     {
       "source": "kompas.com",
-      "title": "Tegas! Tenerife Putus Kontrak Gabriel Palmero Imbas Skandal Naturalisasi Malaysia"
+      "title": "Kementan Tegaskan Netralitas ASN dan Komitmen Menjaga Hubungan Baik dengan Media"
     },
     {
       "source": "tempo.co",
-      "title": "Usman Hamid: Cak Nur dan Gus Dur Jadi Penjahat Kalau Soeharto Pahlawan"
+      "title": "Mensos Pastikan Tanggung Biaya Medis-Rehabilitas Korban Ledakan SMAN 72"
     }
   ]
 }
