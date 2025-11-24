@@ -1,17 +1,21 @@
 {
-  "updated": "2025-11-24T21:10:59.620121Z",
+  "updated": "2025-11-24T22:10:25.237021Z",
   "feeds": [
+    {
+      "source": "detik.com",
+      "title": "Kasus TKI 20 Tahun Dianiaya di Malaysia, PAN Soroti Pengawasan Pekerja Migran"
+    },
     {
       "source": "antaranews.com",
       "title": "Pembunuh Alvaro ditemukan tewas, dokter sebut tak ada tanda kekerasan"
     },
     {
       "source": "kompas.com",
-      "title": "Hasil Timnas U17 Portugal Vs Brasil 0-0 (6-5 adu penalti), Sejarah Portugal!"
+      "title": "Ironi Nasib Guru: Tuntutan Kian Tinggi, Kesejahteraan Belum Terpenuhi"
     },
     {
       "source": "tempo.co",
-      "title": "Gus Ipul Paparkan Konsep Sekolah Rakyat dalam Seminar Nasional LAN"
+      "title": "P2G Kritik Kebijakan Guru Wali: Beban Kerja Bertambah, Sertifikasi Guru Terancam Tak Cair"
     }
   ]
 }
