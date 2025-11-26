@@ -22,7 +22,8 @@ data = {
     "feeds": results
 }
 
-with open("latest.json", "w", encoding="utf-8") as f:
+# ←←← ONLY THIS LINE CHANGED ←←←
+with open("data/latest.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print("✅ latest.json updated successfully!")
+print("latest.json updated successfully inside /data folder!")
