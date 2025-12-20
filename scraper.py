@@ -21,12 +21,14 @@ def scrape_verse():
         pattern = r"\n\s*(.*?\(.*?\d+:\d+.*?\))"
         match = re.search(pattern, full_text)
 
-        if match:
-            final_content = match.group(1).strip()
+       if match:
+            # We grab the match and strip the "Nas:" prefix specifically
+            final_content = match.group(1).replace("Nas:", "").strip()
         else:
-            # Simple fallback: find the first line that contains both "(" and ":"
+            # Fallback cleaning
             lines = full_text.split('\n')
-            final_content = next((l.strip() for l in lines if "(" in l and ":" in l), "Gagal mengambil ayat.")
+            raw_line = next((l.strip() for l in lines if "(" in l and ":" in l), "")
+            final_content = raw_line.replace("Nas:", "").strip()
 
         data = { "content": final_content }
 
