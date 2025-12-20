@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
+import re
 
 def scrape_verse():
     url = "https://alkitab.mobi/renungan/rh/"
@@ -10,30 +11,33 @@ def scrape_verse():
     soup = BeautifulSoup(response.text, 'html.parser')
 
     try:
-        # Find the div that contains "Nas:"
+        # Get the main content text
         nas_label = soup.find(text=lambda t: "Nas:" in t)
         nas_div = nas_label.find_parent('div')
-        
-        # The verse reference is usually inside a bold or link tag within that div
-        reference = nas_div.find('a').text.strip()
-        
-        # The verse text is the text following the reference
-        # We clean up extra whitespace and newlines
-        full_text = nas_div.text.replace("Nas:", "").replace(reference, "").strip()
+        full_text = nas_div.text
 
-        data = {
-            "reference": reference,
-            "verse": full_text
-        }
+        # Logic: Find the line that has a book reference in parentheses (e.g. "(Bilangan 9:16)")
+        # This regex looks for text ending with (Book Name Chapter:Verse)
+        pattern = r"\n\s*(.*?\(.*?\d+:\d+.*?\))"
+        match = re.search(pattern, full_text)
 
-        # Save to data directory
+        if match:
+            final_content = match.group(1).strip()
+        else:
+            # Simple fallback: find the first line that contains both "(" and ":"
+            lines = full_text.split('\n')
+            final_content = next((l.strip() for l in lines if "(" in l and ":" in l), "Gagal mengambil ayat.")
+
+        data = { "content": final_content }
+
         os.makedirs('data', exist_ok=True)
         with open('data/verse.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
             
-        print(f"Successfully scraped: {reference}")
+        print(f"Success: {final_content}")
+
     except Exception as e:
-        print(f"Error scraping: {e}")
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     scrape_verse()
