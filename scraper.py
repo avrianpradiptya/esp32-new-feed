@@ -21,7 +21,7 @@ def scrape_verse():
         pattern = r"\n\s*(.*?\(.*?\d+:\d+.*?\))"
         match = re.search(pattern, full_text)
 
-       if match:
+        if match:
             # We grab the match and strip the "Nas:" prefix specifically
             final_content = match.group(1).replace("Nas:", "").strip()
         else:
