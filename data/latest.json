@@ -1,33 +1,37 @@
 {
-  "updated": "2026-01-03T09:12:06.536199Z",
+  "updated": "2026-01-03T10:11:58.576942Z",
   "feeds": [
     {
+      "source": "detik.com",
+      "title": "BNN Jabar Ringkus Duo Pengedar di Karawang, Sita 96,97 Gram Sabu"
+    },
+    {
       "source": "antaranews.com",
-      "title": "Ledakan dahsyat terdengar di Caracas di tengah ketegangan Venezuela-AS"
+      "title": "Profil dan rekam jejak John Herdman, pelatih anyar timnas Indonesia"
     },
     {
       "source": "kompas.com",
-      "title": "Barcelona Dapat Saingan untuk Gaet Dusan Vlahovic dari Juventus"
+      "title": "Jadwal Penutupan Semeru dan Bromo 2026, Ini Tanggal Lengkapnya"
     },
     {
       "source": "tempo.co",
-      "title": "Kanal Foundation Soroti UU APBN 2026 Belum Dipublikasikan"
+      "title": "Kekerasan di Unima, DPR Soroti Lemahnya Perlindungan Kampus"
     },
     {
       "source": "republika.co.id",
-      "title": "Alasan di Balik Pemecatan Khalid bin Walid"
+      "title": "Pemerintah Tegaskan APBN Tetap Jadi Penyangga Ekonomi di Awal 2026"
     },
     {
       "source": "viva.co",
-      "title": "Polisi Segera Tetapkan Tersangka Insiden Kapal Tenggelam Tewaskan Pelatih Valencia dan Tiga Anaknya"
+      "title": "Perceraian Ridwan Kamil-Atalia Diputuskan 7 Januari"
     },
     {
       "source": "jpnn.com",
-      "title": "Jejak Kehadiran Aura Kasih di Acara Peluncuran Skincare Milik Ridwan Kamil Dibongkar"
+      "title": "Trump: Amerika Telah Menangkap Presiden Venezuela Maduro"
     },
     {
       "source": "times.co.id",
-      "title": "Pesan Damai dalam Nuansa Moderasi Saat Peringatan HAB Kemenag di Kabupaten Malang"
+      "title": "PMR Madya SMPN 2 Tulakan Pacitan Gandeng Dinas Kehutanan, Tanam 15 Pohon Buah Wujudkan Sekolah Hijau"
     },
     {
       "source": "BBC Indonesia",
@@ -35,7 +39,7 @@
     },
     {
       "source": "antaranews Jogja",
-      "title": "Momentum Nataru Yogyakarta ramai diserbu wisatawan, Afif dan tim PLN siaga"
+      "title": "\"Agak Laen: Menyala Pantiku!\" jadi film Indonesia terlaris"
     }
   ]
 }
