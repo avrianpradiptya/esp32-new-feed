@@ -1,29 +1,33 @@
 {
-  "updated": "2026-01-27T14:21:43.072812Z",
+  "updated": "2026-01-27T15:21:31.092247Z",
   "feeds": [
+    {
+      "source": "detik.com",
+      "title": "Ratas di Hambalang, Prabowo Bahas Pembangunan 10 Kampus Kolaborasi RI dan UK"
+    },
     {
       "source": "antaranews.com",
       "title": "Polres Gayo Lues bangun empat jembatan gantung di wilayah bencana"
     },
     {
       "source": "kompas.com",
-      "title": "Marak Penipuan Mengatasnamakan ETLE, Ini Nomor Resmi ETLE Nasional"
+      "title": "Prabowo Kumpulkan Menteri di Hambalang, Tindaklanjuti Kerja Sama Pendidikan dengan Inggris"
     },
     {
       "source": "tempo.co",
-      "title": "PNM Dorong Pemberdayaan Program ULaMM untuk Perkuat UMKM"
+      "title": "Menkes: Hasil CKG Anak Terbanyak Masalah Gigi dan Hipertensi"
     },
     {
       "source": "republika.co.id",
-      "title": "Timnas Futsal Indonesia Hancurkan Korea Selatan 5-0 di Piala Asia Futsal 2026"
+      "title": "Menpora Siapkan Opsi Ambil Alih Federasi untuk Atasi Dualisme"
     },
     {
       "source": "viva.co",
-      "title": "Berakhir Cerai Gegara Selingkuh, Jule: Pernikahan Itu Kan Kontrak Bisnis"
+      "title": "Kapal Feri Miring saat Bersandar di Pelabuhan Semayang, 3 Penumpang Tewas Terjepit"
     },
     {
       "source": "jpnn.com",
-      "title": "Prajurit TNI AL Bergerak Cepat Evakuasi Penumpang Korban Kapal Miring di Balikpapan"
+      "title": "Tindaklanjuti Arahan Kaesang, PSI Segera Lakukan Restrukturisasi sampai Tingkat Desa"
     },
     {
       "source": "times.co.id",
@@ -35,7 +39,7 @@
     },
     {
       "source": "antaranews Jogja",
-      "title": "Menpora siapkan opsi ambil alih federasi untuk atasi dualisme"
+      "title": "Memasuki usia 50 tahun, Maia Estianty lebih sadar menjaga kesehatan tubuh"
     }
   ]
 }
